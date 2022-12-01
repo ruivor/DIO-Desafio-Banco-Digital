@@ -1,8 +1,37 @@
+import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Cliente {
 	private String nome;
-	
-	//getters and setters
+	private String cpf;
+	private LocalDateTime dataConta;
+
+	// construtor
+
+	public Cliente(String nome, String cpf, LocalDateTime dataConta) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.dataConta = dataConta;
+	}
+
+	// getters and setters
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public LocalDateTime getDataConta() {
+		return dataConta;
+	}
+
+	public void setDataConta(LocalDateTime dataConta) {
+		this.dataConta = dataConta;
+	}
 
 	public String getNome() {
 		return nome;

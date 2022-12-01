@@ -1,3 +1,4 @@
+import java.time.format.DateTimeFormatter;
 
 public abstract class Conta implements Iconta {
 
@@ -12,6 +13,7 @@ public abstract class Conta implements Iconta {
 	protected int numero;
 	protected double saldo;
 	protected Cliente cliente;
+	
 
 	// construtor
 
@@ -19,6 +21,8 @@ public abstract class Conta implements Iconta {
 		this.agencia = AGENCIA_PADRAO;
 		this.numero = SEQUENCIAL++;
 		this.cliente = cliente;
+	
+		
 	}
 
 	// getters and setters
@@ -58,6 +62,8 @@ public abstract class Conta implements Iconta {
 	protected void infosComuns() {
 		System.out.println("=========================================");
 		System.out.println(String.format("Saldo: %s", this.cliente.getNome()));
+		System.out.println(String.format("CPF:%s" , this.cliente.getCpf()));
+		System.out.println(String.format("Cliente desde: %s" , this.cliente.getDataConta().format(DateTimeFormatter.ofPattern("dd/MM/uuuu"))));
 		System.out.println(String.format("Agência: %d", this.agencia));
 		System.out.println(String.format("Conta: %d", this.numero));
 		System.out.println(String.format("Saldo: %.2f", this.saldo));
